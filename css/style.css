@@ -1,183 +1,1328 @@
 /* ========================================
    🐰 兔兔公益活動網站
-   基礎樣式
+   V1 Activity Page
    ======================================== */
+
+
+/* ========================================
+   基礎設定
+   ======================================== */
+
+:root {
+  --cream: #f8f5ed;
+  --cream-light: #fcfaf5;
+  --white: #fffdf9;
+
+  --green: #71816a;
+  --green-light: #e9eee6;
+  --green-soft: #f1f4ed;
+
+  --brown: #635d51;
+  --brown-light: #8c8578;
+
+  --line: #e6e0d4;
+
+  --accent: #c49b72;
+
+  --shadow:
+    0 18px 50px rgba(83, 76, 63, 0.08);
+
+  --radius-large: 32px;
+  --radius-medium: 22px;
+}
+
 
 * {
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
   margin: 0;
+
   font-family:
     "Noto Sans TC",
     "PingFang TC",
     "Microsoft JhengHei",
     sans-serif;
 
-  color: #4f5148;
-  background: #faf8f2;
+  color: var(--brown);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fcfaf5 0%,
+      #f8f5ed 100%
+    );
+
   line-height: 1.8;
 }
+
+
+body,
+button,
+a {
+  -webkit-font-smoothing: antialiased;
+}
+
 
 main {
   width: 100%;
   overflow: hidden;
 }
 
-section {
-  width: min(1100px, 90%);
-  margin: 0 auto;
-  padding: 80px 0;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
+
 
 h1,
 h2,
+h3,
 p {
   margin-top: 0;
 }
 
-h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.25;
-  margin-bottom: 20px;
+
+p {
+  color: var(--brown-light);
 }
 
-h2 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.4;
-  margin-bottom: 24px;
+
+.section {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 100px 0;
 }
 
-p,
-li {
-  font-size: 1rem;
+
+.section-heading {
+  margin-bottom: 42px;
 }
 
-ul {
-  padding-left: 1.4rem;
+
+.section-heading.centered {
+  text-align: center;
 }
+
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: var(--green);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+
+.section-heading h2,
+.intro-copy h2,
+.task-title h2 {
+  margin-bottom: 18px;
+
+  color: var(--brown);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  line-height: 1.35;
+
+  letter-spacing: -0.02em;
+}
+
 
 /* ========================================
    Hero
    ======================================== */
 
 .hero {
-  min-height: 70vh;
+  width: 100%;
+  min-height: 760px;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  text-align: center;
-
-  padding: 100px 20px;
+  padding: 90px 0;
 
   background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(225, 233, 220, 0.65),
+      transparent 32%
+    ),
     linear-gradient(
-      180deg,
-      #f7f3e9 0%,
-      #f1eadc 100%
+      135deg,
+      #fcfaf5 0%,
+      #f3eee3 100%
     );
 }
 
-.hero p {
-  max-width: 600px;
-  font-size: 1.1rem;
+
+.hero-inner {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.88fr)
+    minmax(0, 1.12fr);
+
+  align-items: center;
+
+  gap: 70px;
 }
+
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: var(--green);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+
+.hero h1 {
+  margin-bottom: 16px;
+
+  color: var(--brown);
+
+  font-size: clamp(3rem, 6vw, 5.4rem);
+
+  line-height: 1.15;
+
+  letter-spacing: -0.045em;
+}
+
+
+.hero h1 span {
+  color: var(--green);
+}
+
+
+.hero-partner {
+  margin-bottom: 24px;
+
+  color: var(--brown);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  letter-spacing: 0.03em;
+}
+
+
+.hero-description {
+  max-width: 450px;
+
+  margin-bottom: 34px;
+
+  color: var(--brown-light);
+
+  font-size: 1.08rem;
+
+  line-height: 2;
+}
+
+
+.hero-button,
+.registration-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 24px;
+
+  color: #fff;
+
+  background: var(--green);
+
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 24px rgba(113, 129, 106, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.hero-button span,
+.registration-button span {
+  font-size: 1.1rem;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.hero-button:hover,
+.registration-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 30px rgba(113, 129, 106, 0.25);
+}
+
+
+.hero-button:hover span,
+.registration-button:hover span {
+  transform: translateX(4px);
+}
+
 
 /* ========================================
-   活動內容
+   Hero 照片拼貼
    ======================================== */
 
-.activity-intro,
-.activity-info,
-.activity-schedule,
-.activity-task {
-  background: #fffdf8;
-  border-radius: 28px;
-  padding: 50px;
-  margin-top: 30px;
+.hero-collage {
+  position: relative;
+
+  min-height: 560px;
 }
+
+
+.collage-photo {
+  position: absolute;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 18px;
+
+  border: 8px solid rgba(255, 253, 249, 0.9);
+
+  border-radius: 28px;
+
+  box-shadow: var(--shadow);
+
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+/*
+  先用柔和色塊建立照片拼貼比例。
+  之後放入真正兔兔照片即可。
+*/
+
+.photo-one {
+  width: 55%;
+  height: 57%;
+
+  top: 2%;
+  left: 2%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d7dfcc,
+      #aab89e
+    );
+}
+
+
+.photo-two {
+  width: 47%;
+  height: 48%;
+
+  top: 0;
+  right: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e9d9c5,
+      #c8ab8b
+    );
+}
+
+
+.photo-three {
+  width: 48%;
+  height: 48%;
+
+  bottom: 0;
+  left: 12%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #dfe8df,
+      #a8bba9
+    );
+}
+
+
+.photo-four {
+  width: 43%;
+  height: 43%;
+
+  right: 3%;
+  bottom: 5%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e7dfd2,
+      #c6b69e
+    );
+}
+
+
+.collage-photo span {
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(65, 70, 58, 0.35);
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* ========================================
+   活動資訊
+   ======================================== */
+
+.activity-info-section {
+  padding-top: 110px;
+}
+
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+
+.info-card {
+  min-height: 170px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  padding: 28px 22px;
+
+  background: rgba(255, 253, 249, 0.9);
+
+  border: 1px solid rgba(230, 224, 212, 0.9);
+
+  border-radius: var(--radius-medium);
+
+  box-shadow:
+    0 10px 30px rgba(83, 76, 63, 0.035);
+}
+
+
+.info-icon {
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--green);
+
+  background: var(--green-soft);
+
+  border-radius: 50%;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+.info-card small {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--brown-light);
+
+  font-size: 0.75rem;
+}
+
+
+.info-card strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--brown);
+
+  font-size: 1rem;
+}
+
+
+.info-card p {
+  margin-bottom: 0;
+
+  font-size: 0.82rem;
+}
+
+
+/* ========================================
+   活動介紹
+   ======================================== */
+
+.intro-section {
+  padding-top: 80px;
+}
+
+
+.intro-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+
+.intro-copy p {
+  max-width: 570px;
+
+  font-size: 1rem;
+
+  line-height: 2;
+}
+
+
+.intro-copy h2 em {
+  color: var(--green);
+
+  font-style: normal;
+}
+
+
+.intro-note {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  max-width: 500px;
+
+  margin-top: 30px;
+  padding: 18px 20px;
+
+  background: var(--green-soft);
+
+  border-radius: 16px;
+}
+
+
+.intro-note span {
+  font-size: 1.4rem;
+}
+
+
+.intro-note p {
+  margin: 0;
+
+  color: var(--green);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  line-height: 1.7;
+}
+
+
+.intro-photo {
+  position: relative;
+}
+
+
+.large-photo-placeholder {
+  min-height: 470px;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 26px;
+
+  border-radius: 34px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d9e2d3 0%,
+      #afc0a8 50%,
+      #d8cbb9 100%
+    );
+
+  box-shadow: var(--shadow);
+
+  color: rgba(255, 255, 255, 0.95);
+
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+.large-photo-placeholder::after {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: -25px;
+  right: -25px;
+
+  background: #eee6d8;
+
+  border-radius: 50%;
+
+  opacity: 0.8;
+}
+
+
+/* ========================================
+   Schedule
+   ======================================== */
+
+.schedule-section {
+  padding-top: 70px;
+}
+
+
+.section-heading.centered p {
+  margin-bottom: 0;
+}
+
+
+.schedule-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+
+.schedule-card {
+  position: relative;
+
+  min-height: 285px;
+
+  padding: 28px 24px;
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-medium);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+}
+
+
+.schedule-card.featured {
+  background:
+    linear-gradient(
+      160deg,
+      #edf2e9,
+      #e2eadf
+    );
+
+  border-color: transparent;
+}
+
+
+.schedule-number {
+  display: block;
+
+  margin-bottom: 35px;
+
+  color: var(--green);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+
+.schedule-card time {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--brown);
+
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+.schedule-card h3 {
+  margin-bottom: 12px;
+
+  color: var(--brown);
+
+  font-size: 1.15rem;
+}
+
+
+.schedule-card p {
+  margin-bottom: 0;
+
+  font-size: 0.88rem;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   志工任務
+   ======================================== */
+
+.task-section {
+  padding-top: 80px;
+}
+
+
+.task-layout {
+  display: grid;
+
+  grid-template-columns:
+    0.75fr
+    1.25fr;
+
+  gap: 80px;
+
+  padding: 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0f3eb,
+      #f7f3eb
+    );
+
+  border-radius: var(--radius-large);
+}
+
+
+.task-title p {
+  max-width: 400px;
+
+  line-height: 2;
+}
+
+
+.task-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+
+.task-item {
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 22px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 18px;
+}
+
+
+.task-item span {
+  color: var(--green);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+.task-item p {
+  margin: 12px 0 0;
+
+  color: var(--brown);
+
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   主辦與合作
+   ======================================== */
+
+.organizers-section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+
+.organizers-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 70px;
+
+  padding: 35px 40px;
+
+  background: rgba(255, 253, 249, 0.75);
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+
+.organizer-group {
+  text-align: center;
+}
+
+
+.organizer-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--green);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+
+.organizer-group h3 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.organizer-group h3 span {
+  color: var(--brown-light);
+
+  margin: 0 5px;
+}
+
+
+.organizer-divider {
+  width: 1px;
+  height: 35px;
+
+  background: var(--line);
+}
+
 
 /* ========================================
    報名區
    ======================================== */
 
-.registration {
-  text-align: center;
+.registration-section {
+  padding-top: 70px;
+  padding-bottom: 110px;
+}
+
+
+.registration-card {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  align-items: center;
+
+  gap: 50px;
+
+  padding: 65px;
 
   background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 30%
+    ),
     linear-gradient(
       135deg,
-      #f1eadc,
-      #e8eee4
+      #e9eee4,
+      #f1e8dc
     );
 
-  border-radius: 32px;
-
-  margin-bottom: 80px;
+  border-radius: 38px;
 }
 
-.registration button {
-  border: 0;
-  border-radius: 999px;
 
-  padding: 14px 32px;
+.registration-copy h2 {
+  margin-bottom: 12px;
 
-  font-size: 1rem;
-  font-weight: 600;
+  color: var(--brown);
 
-  color: #ffffff;
-  background: #6f8069;
+  font-size: clamp(2rem, 4vw, 3rem);
 
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+  line-height: 1.3;
 }
 
-.registration button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+
+.registration-copy > p {
+  margin-bottom: 5px;
 }
+
+
+.spots {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--green);
+
+  font-size: 1.15rem;
+}
+
+
+.registration-note {
+  margin-bottom: 28px;
+
+  font-size: 0.82rem;
+}
+
+
+.tally-placeholder {
+  min-height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background:
+    rgba(255, 253, 249, 0.65);
+
+  border: 2px dashed rgba(113, 129, 106, 0.35);
+
+  border-radius: 24px;
+
+  text-align: center;
+}
+
+
+.tally-placeholder-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  color: var(--green);
+
+  background: var(--green-soft);
+
+  border-radius: 50%;
+
+  font-size: 1.4rem;
+}
+
+
+.tally-placeholder p {
+  margin-bottom: 4px;
+
+  color: var(--brown);
+
+  font-weight: 700;
+}
+
+
+.tally-placeholder small {
+  color: var(--brown-light);
+}
+
 
 /* ========================================
-   📱 手機版
+   Footer
    ======================================== */
 
-@media (max-width: 700px) {
+.site-footer {
+  padding: 45px 20px;
 
-  section {
-    width: 90%;
-    padding: 55px 0;
-  }
+  text-align: center;
 
-  .hero {
-    min-height: 75vh;
-    padding: 80px 20px;
-  }
+  border-top: 1px solid var(--line);
 
-  .hero p {
-    font-size: 1rem;
-  }
-
- .activity-intro,
- .activity-info,
- .activity-schedule,
- .activity-task {
-  padding: 32px 24px;
-  border-radius: 22px;
+  background: #f5f1e8;
 }
 
-  .registration {
-    padding: 40px 24px;
+
+.site-footer p {
+  margin-bottom: 4px;
+
+  color: var(--brown);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+.site-footer span {
+  color: var(--brown-light);
+
+  font-size: 0.75rem;
+}
+
+
+/* ========================================
+   📱 Tablet
+   ======================================== */
+
+@media (max-width: 950px) {
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+
+  .hero-copy {
+    max-width: 650px;
+  }
+
+
+  .hero-collage {
+    min-height: 480px;
+  }
+
+
+  .info-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .intro-layout {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+
+  .intro-photo {
+    max-width: 700px;
+  }
+
+
+  .schedule-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .task-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 55px;
+  }
+
+
+  .registration-card {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding: 55px;
+  }
+
+}
+
+
+/* ========================================
+   📱 Mobile
+   ======================================== */
+
+@media (max-width: 650px) {
+
+  .section {
+    width: 88%;
+
+    padding: 70px 0;
+  }
+
+
+  .hero {
+    min-height: auto;
+
+    padding: 70px 0 55px;
+  }
+
+
+  .hero-inner {
+    width: 88%;
+
+    gap: 45px;
+  }
+
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+
+  .hero-description {
+    font-size: 0.98rem;
+
+    line-height: 1.9;
+  }
+
+
+  .hero-collage {
+    min-height: 390px;
+  }
+
+
+  .collage-photo {
+    border-width: 5px;
+
+    border-radius: 20px;
+
+    padding: 10px;
+
+    font-size: 0.65rem;
+  }
+
+
+  .photo-one {
+    width: 57%;
+    height: 54%;
+  }
+
+
+  .photo-two {
+    width: 48%;
+    height: 46%;
+  }
+
+
+  .photo-three {
+    width: 50%;
+    height: 45%;
+
+    left: 8%;
+  }
+
+
+  .photo-four {
+    width: 44%;
+    height: 40%;
+  }
+
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+
+  .section-heading h2,
+  .intro-copy h2,
+  .task-title h2 {
+    font-size: 2rem;
+  }
+
+
+  .info-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+
+  .info-card {
+    min-height: 150px;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 20px 16px;
+  }
+
+
+  .info-card strong {
+    font-size: 0.9rem;
+  }
+
+
+  .info-card p {
+    font-size: 0.72rem;
+  }
+
+
+  .intro-copy p {
+    font-size: 0.94rem;
+
+    line-height: 1.9;
+  }
+
+
+  .large-photo-placeholder {
+    min-height: 350px;
+
+    border-radius: 26px;
+  }
+
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  .schedule-card {
+    min-height: auto;
+
+    padding: 24px;
+  }
+
+
+  .schedule-number {
+    margin-bottom: 20px;
+  }
+
+
+  .task-layout {
+    padding: 38px 24px;
+
+    border-radius: 26px;
+  }
+
+
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  .task-item {
+    min-height: 95px;
+  }
+
+
+  .organizers-inner {
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding: 35px 20px;
+  }
+
+
+  .organizer-divider {
+    width: 45px;
+    height: 1px;
+  }
+
+
+  .registration-card {
+    padding: 40px 22px;
+
+    border-radius: 28px;
+  }
+
+
+  .registration-copy h2 {
+    font-size: 2rem;
+  }
+
+
+  .tally-placeholder {
+    min-height: 260px;
+
+    padding: 30px 20px;
+  }
+
+
+  .site-footer {
+    padding: 35px 20px;
   }
 
 }
