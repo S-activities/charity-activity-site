@@ -20,7 +20,7 @@
   <main>
 
     <!-- ========================================
-         Hero 主視覺
+         Hero
          ======================================== -->
 
     <section class="hero">
@@ -58,9 +58,6 @@
 
         </div>
 
-
-        <!-- 兔兔照片拼貼區
-             之後將這四個照片框替換成真正照片 -->
 
         <div class="hero-collage">
 
@@ -436,7 +433,7 @@
 
 
     <!-- ========================================
-         報名 CTA
+         報名區
          ======================================== -->
 
     <section
@@ -468,34 +465,25 @@
             名額有限，額滿後將停止報名。
           </p>
 
-          <a
-            class="registration-button"
-            href="https://tally.so/r/aQWE1b"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            立即報名
-            <span>→</span>
-          </a>
-
         </div>
 
 
-        <!-- 未來可直接把 Tally 嵌入這裡 -->
+        <!-- ====================================
+             Tally 報名表
+             ==================================== -->
 
-        <div class="tally-placeholder">
+        <div class="tally-embed">
 
-          <span class="tally-placeholder-icon">
-            ♡
-          </span>
-
-          <p>
-            報名表單
-          </p>
-
-          <small>
-            Tally 報名表將放置於此
-          </small>
+          <iframe
+            data-tally-src="https://tally.so/embed/aQWE1b?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="837"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="流浪兔保護協會報名表"
+          ></iframe>
 
         </div>
 
@@ -521,6 +509,41 @@
     </footer>
 
   </main>
+
+
+  <!-- ========================================
+       Tally Embed Script
+       ======================================== -->
+
+  <script>
+    var d = document,
+      w = "https://tally.so/widgets/embed.js",
+      v = function () {
+        if (typeof Tally !== "undefined") {
+          Tally.loadEmbeds();
+        } else {
+          d
+            .querySelectorAll(
+              "iframe[data-tally-src]:not([src])"
+            )
+            .forEach(function (e) {
+              e.src = e.dataset.tallySrc;
+            });
+        }
+      };
+
+    if (typeof Tally !== "undefined") {
+      v();
+    } else if (
+      d.querySelector('script[src="' + w + '"]') == null
+    ) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
 
 </body>
 
