@@ -1,1 +1,181 @@
+/* ========================================
+   🐰 兔兔公益活動網站
+   基礎樣式
+   ======================================== */
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+
+  color: #4f5148;
+  background: #faf8f2;
+  line-height: 1.8;
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+section {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+p,
+li {
+  font-size: 1rem;
+}
+
+ul {
+  padding-left: 1.4rem;
+}
+
+/* ========================================
+   Hero
+   ======================================== */
+
+.hero {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f3e9 0%,
+      #f1eadc 100%
+    );
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   活動內容
+   ======================================== */
+
+.activity-intro,
+.activity-info,
+.activity-task {
+  background: #fffdf8;
+  border-radius: 28px;
+  padding: 50px;
+  margin-top: 30px;
+}
+
+/* ========================================
+   報名區
+   ======================================== */
+
+.registration {
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1eadc,
+      #e8eee4
+    );
+
+  border-radius: 32px;
+
+  margin-bottom: 80px;
+}
+
+.registration button {
+  border: 0;
+  border-radius: 999px;
+
+  padding: 14px 32px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: #ffffff;
+  background: #6f8069;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.registration button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ========================================
+   📱 手機版
+   ======================================== */
+
+@media (max-width: 700px) {
+
+  section {
+    width: 90%;
+    padding: 55px 0;
+  }
+
+  .hero {
+    min-height: 75vh;
+    padding: 80px 20px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .activity-intro,
+  .activity-info,
+  .activity-task {
+    padding: 32px 24px;
+    border-radius: 22px;
+  }
+
+  .registration {
+    padding: 40px 24px;
+  }
+
+}
