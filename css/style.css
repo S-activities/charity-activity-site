@@ -13,22 +13,24 @@
   --line: #e6e0d4;
 
   --shadow:
-    0 18px 50px rgba(83, 76, 63, 0.08);
+    0 18px 50px rgba(83, 76, 63, 0.07);
 
   --radius-large: 32px;
   --radius-medium: 22px;
 }
 
 
+/* ========================================
+   Base
+   ======================================== */
+
 * {
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
-
 
 body {
   margin: 0;
@@ -51,25 +53,21 @@ body {
   line-height: 1.8;
 }
 
-
 body,
 button,
 a {
   -webkit-font-smoothing: antialiased;
 }
 
-
 main {
   width: 100%;
   overflow: hidden;
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 
 h1,
 h2,
@@ -78,28 +76,28 @@ p {
   margin-top: 0;
 }
 
-
 p {
   color: var(--brown-light);
 }
 
 
-.section {
-  width: min(1120px, 90%);
-  margin: 0 auto;
-  padding: 100px 0;
-}
+/* ========================================
+   Global Section
+   ======================================== */
 
+.section {
+  width: min(1080px, 88%);
+  margin: 0 auto;
+  padding: 108px 0;
+}
 
 .section-heading {
   margin-bottom: 42px;
 }
 
-
 .section-heading.centered {
   text-align: center;
 }
-
 
 .section-label {
   display: inline-block;
@@ -108,12 +106,11 @@ p {
 
   color: var(--green);
 
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
 
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
 }
-
 
 .section-heading h2,
 .intro-copy h2,
@@ -122,11 +119,11 @@ p {
 
   color: var(--brown);
 
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
 
-  line-height: 1.35;
+  line-height: 1.4;
 
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 
@@ -136,7 +133,7 @@ p {
 
 .hero {
   width: 100%;
-  min-height: 760px;
+  min-height: 720px;
 
   display: flex;
   align-items: center;
@@ -145,9 +142,9 @@ p {
 
   background:
     radial-gradient(
-      circle at 75% 20%,
-      rgba(225, 233, 220, 0.65),
-      transparent 32%
+      circle at 76% 18%,
+      rgba(225, 233, 220, 0.68),
+      transparent 31%
     ),
     linear-gradient(
       135deg,
@@ -156,9 +153,8 @@ p {
     );
 }
 
-
 .hero-inner {
-  width: min(1180px, 90%);
+  width: min(1140px, 88%);
   margin: 0 auto;
 
   display: grid;
@@ -169,81 +165,110 @@ p {
 
   align-items: center;
 
-  gap: 70px;
+  gap: 76px;
 }
-
 
 .hero-copy {
   position: relative;
   z-index: 2;
 }
 
-
 .eyebrow {
   display: inline-block;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   color: var(--green);
 
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
 }
 
-
 .hero h1 {
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 
   color: var(--brown);
 
-  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-size: clamp(3rem, 5.5vw, 5rem);
 
-  line-height: 1.15;
+  line-height: 1.18;
 
   letter-spacing: -0.045em;
 }
-
 
 .hero h1 span {
   color: var(--green);
 }
 
-
 .hero-partner {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 
   color: var(--brown);
 
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
-
 .hero-description {
-  max-width: 450px;
+  max-width: 430px;
 
   margin-bottom: 0;
 
   color: var(--brown-light);
 
-  font-size: 1.08rem;
+  font-size: 1rem;
 
   line-height: 2;
 }
 
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 30px;
+  padding: 12px 20px;
+
+  color: var(--white);
+
+  background: var(--green);
+
+  border-radius: 999px;
+
+  font-size: 0.86rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 28px rgba(113, 129, 106, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(113, 129, 106, 0.23);
+}
+
+.hero-button span {
+  font-size: 1rem;
+}
+
 
 /* ========================================
-   Hero 照片拼貼
+   Hero Photo Collage
    ======================================== */
 
 .hero-collage {
   position: relative;
 
-  min-height: 560px;
+  min-height: 530px;
 }
-
 
 .collage-photo {
   position: absolute;
@@ -253,22 +278,21 @@ p {
   display: flex;
   align-items: flex-end;
 
-  padding: 18px;
+  padding: 17px;
 
-  border: 8px solid rgba(255, 253, 249, 0.9);
+  border: 7px solid rgba(255, 253, 249, 0.92);
 
-  border-radius: 28px;
+  border-radius: 27px;
 
   box-shadow: var(--shadow);
 
   color: rgba(255, 255, 255, 0.95);
 
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
 
   letter-spacing: 0.08em;
 }
-
 
 .photo-one {
   width: 55%;
@@ -285,7 +309,6 @@ p {
     );
 }
 
-
 .photo-two {
   width: 47%;
   height: 48%;
@@ -300,7 +323,6 @@ p {
       #c8ab8b
     );
 }
-
 
 .photo-three {
   width: 48%;
@@ -317,7 +339,6 @@ p {
     );
 }
 
-
 .photo-four {
   width: 43%;
   height: 43%;
@@ -333,26 +354,24 @@ p {
     );
 }
 
-
 .collage-photo span {
-  padding: 6px 12px;
+  padding: 5px 11px;
 
   border-radius: 999px;
 
-  background: rgba(65, 70, 58, 0.35);
+  background: rgba(65, 70, 58, 0.3);
 
   backdrop-filter: blur(5px);
 }
 
 
 /* ========================================
-   活動資訊
+   Activity Info
    ======================================== */
 
 .activity-info-section {
-  padding-top: 110px;
+  padding-top: 100px;
 }
-
 
 .info-grid {
   display: grid;
@@ -360,33 +379,35 @@ p {
   grid-template-columns:
     repeat(4, 1fr);
 
-  gap: 16px;
+  gap: 14px;
 }
 
-
 .info-card {
-  min-height: 170px;
+  min-height: 158px;
 
   display: flex;
   align-items: flex-start;
 
-  gap: 16px;
+  gap: 14px;
 
-  padding: 28px 22px;
+  padding: 25px 20px;
 
-  background: rgba(255, 253, 249, 0.9);
+  background:
+    rgba(255, 253, 249, 0.88);
 
-  border: 1px solid rgba(230, 224, 212, 0.9);
+  border: 1px solid rgba(230, 224, 212, 0.8);
 
-  border-radius: var(--radius-medium);
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 28px rgba(83, 76, 63, 0.035);
 }
-
 
 .info-icon {
   flex: 0 0 auto;
 
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
 
   display: flex;
   align-items: center;
@@ -398,21 +419,19 @@ p {
 
   border-radius: 50%;
 
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 700;
 }
-
 
 .info-card small {
   display: block;
 
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 
   color: var(--brown-light);
 
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
-
 
 .info-card strong {
   display: block;
@@ -421,25 +440,23 @@ p {
 
   color: var(--brown);
 
-  font-size: 1rem;
+  font-size: 0.96rem;
 }
-
 
 .info-card p {
   margin-bottom: 0;
 
-  font-size: 0.82rem;
+  font-size: 0.78rem;
 }
 
 
 /* ========================================
-   活動介紹
+   Activity Intro
    ======================================== */
 
 .intro-section {
-  padding-top: 80px;
+  padding-top: 88px;
 }
-
 
 .intro-layout {
   display: grid;
@@ -450,18 +467,16 @@ p {
 
   align-items: center;
 
-  gap: 90px;
+  gap: 86px;
 }
 
-
 .intro-copy p {
-  max-width: 570px;
+  max-width: 550px;
 
-  font-size: 1rem;
+  font-size: 0.96rem;
 
   line-height: 2;
 }
-
 
 .intro-copy h2 em {
   color: var(--green);
@@ -469,50 +484,46 @@ p {
   font-style: normal;
 }
 
-
 .intro-note {
   display: flex;
   align-items: center;
 
   gap: 14px;
 
-  max-width: 500px;
+  max-width: 490px;
 
-  margin-top: 30px;
-  padding: 18px 20px;
+  margin-top: 28px;
+  padding: 17px 19px;
 
   background: var(--green-soft);
 
   border-radius: 16px;
 }
 
-
 .intro-note span {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
-
 
 .intro-note p {
   margin: 0;
 
   color: var(--green);
 
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-weight: 600;
 
   line-height: 1.7;
 }
 
-
 .large-photo-placeholder {
-  min-height: 470px;
+  min-height: 450px;
 
   display: flex;
   align-items: flex-end;
 
-  padding: 26px;
+  padding: 24px;
 
-  border-radius: 34px;
+  border-radius: 30px;
 
   background:
     linear-gradient(
@@ -526,24 +537,24 @@ p {
 
   color: rgba(255, 255, 255, 0.95);
 
+  font-size: 0.8rem;
   font-weight: 700;
+
   letter-spacing: 0.08em;
 }
 
 
 /* ========================================
-   活動流程
+   Schedule
    ======================================== */
 
 .schedule-section {
-  padding-top: 70px;
+  padding-top: 72px;
 }
-
 
 .section-heading.centered p {
   margin-bottom: 0;
 }
-
 
 .schedule-grid {
   display: grid;
@@ -551,24 +562,25 @@ p {
   grid-template-columns:
     repeat(4, 1fr);
 
-  gap: 16px;
+  gap: 14px;
 }
-
 
 .schedule-card {
   position: relative;
 
-  min-height: 285px;
+  min-height: 275px;
 
-  padding: 28px 24px;
+  padding: 26px 23px;
 
   background: var(--white);
 
   border: 1px solid var(--line);
 
-  border-radius: var(--radius-medium);
-}
+  border-radius: 20px;
 
+  box-shadow:
+    0 7px 25px rgba(83, 76, 63, 0.025);
+}
 
 .schedule-card.featured {
   background:
@@ -581,59 +593,54 @@ p {
   border-color: transparent;
 }
 
-
 .schedule-number {
   display: block;
 
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 
   color: var(--green);
 
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
 
   letter-spacing: 0.15em;
 }
 
-
 .schedule-card time {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 
   color: var(--brown);
 
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   font-weight: 700;
 }
 
-
 .schedule-card h3 {
-  margin-bottom: 12px;
+  margin-bottom: 11px;
 
   color: var(--brown);
 
-  font-size: 1.15rem;
+  font-size: 1.08rem;
 }
-
 
 .schedule-card p {
   margin-bottom: 0;
 
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 
   line-height: 1.8;
 }
 
 
 /* ========================================
-   志工任務
+   Volunteer Task
    ======================================== */
 
 .task-section {
-  padding-top: 80px;
+  padding-top: 82px;
 }
-
 
 .task-layout {
   display: grid;
@@ -642,9 +649,9 @@ p {
     0.75fr
     1.25fr;
 
-  gap: 80px;
+  gap: 78px;
 
-  padding: 70px;
+  padding: 64px;
 
   background:
     linear-gradient(
@@ -656,13 +663,11 @@ p {
   border-radius: var(--radius-large);
 }
 
-
 .task-title p {
-  max-width: 400px;
+  max-width: 390px;
 
   line-height: 2;
 }
-
 
 .task-list {
   display: grid;
@@ -670,99 +675,93 @@ p {
   grid-template-columns:
     repeat(2, 1fr);
 
-  gap: 14px;
+  gap: 13px;
 }
 
-
 .task-item {
-  min-height: 120px;
+  min-height: 116px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 22px;
+  padding: 21px;
 
-  background: rgba(255, 255, 255, 0.7);
+  background:
+    rgba(255, 255, 255, 0.68);
 
-  border-radius: 18px;
+  border-radius: 17px;
 }
-
 
 .task-item span {
   color: var(--green);
 
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
 
   letter-spacing: 0.12em;
 }
-
 
 .task-item p {
   margin: 12px 0 0;
 
   color: var(--brown);
 
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
 
 /* ========================================
-   主辦與合作
+   Organizers
    ======================================== */
 
 .organizers-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 62px;
+  padding-bottom: 62px;
 }
-
 
 .organizers-inner {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 70px;
+  gap: 64px;
 
-  padding: 35px 40px;
+  padding: 32px 40px;
 
-  background: rgba(255, 253, 249, 0.75);
+  background:
+    rgba(255, 253, 249, 0.7);
 
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-
 .organizer-group {
   text-align: center;
 }
 
-
 .organizer-label {
   display: block;
 
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 
   color: var(--green);
 
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 800;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.17em;
 }
-
 
 .organizer-group h3 {
   margin: 0;
 
   color: var(--brown);
 
-  font-size: 1rem;
+  font-size: 0.96rem;
   font-weight: 600;
 }
-
 
 .organizer-group h3 span {
   color: var(--brown-light);
@@ -770,42 +769,46 @@ p {
   margin: 0 5px;
 }
 
-
 .organizer-divider {
   width: 1px;
-  height: 35px;
+  height: 32px;
 
   background: var(--line);
 }
 
 
 /* ========================================
-   報名區 + Tally
+   Registration
    ======================================== */
 
 .registration-section {
-  padding-top: 70px;
+  padding-top: 68px;
   padding-bottom: 110px;
 }
-
 
 .registration-card {
   display: grid;
 
+  /*
+    桌面版重新調整：
+    左側保留呼吸感，
+    右側 Tally 控制最大視覺尺寸。
+  */
   grid-template-columns:
-    0.72fr
-    1.28fr;
+    minmax(250px, 0.85fr)
+    minmax(390px, 0.72fr);
 
+  justify-content: center;
   align-items: start;
 
-  gap: 45px;
+  column-gap: 92px;
 
-  padding: 60px;
+  padding: 58px 72px;
 
   background:
     radial-gradient(
-      circle at 15% 20%,
-      rgba(255, 255, 255, 0.75),
+      circle at 12% 18%,
+      rgba(255, 255, 255, 0.78),
       transparent 30%
     ),
     linear-gradient(
@@ -814,71 +817,80 @@ p {
       #f1e8dc
     );
 
-  border-radius: 38px;
+  border-radius: 34px;
 }
-
 
 .registration-copy {
-  padding-top: 35px;
-}
+  max-width: 330px;
 
+  padding-top: 38px;
+}
 
 .registration-copy h2 {
   margin-bottom: 12px;
 
   color: var(--brown);
 
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
 
-  line-height: 1.3;
+  line-height: 1.38;
+
+  letter-spacing: -0.025em;
 }
-
 
 .registration-copy > p {
   margin-bottom: 5px;
-}
 
+  font-size: 0.9rem;
+}
 
 .spots {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 
   color: var(--green);
 
-  font-size: 1.15rem;
+  font-size: 1.08rem;
 }
-
 
 .registration-note {
-  margin-bottom: 28px;
+  margin-bottom: 0;
 
-  font-size: 0.82rem;
+  font-size: 0.78rem;
 }
 
 
+/*
+  Tally 外框：
+  不再讓表單跟著整個 registration-card 撐滿。
+*/
+
 .tally-embed {
-  width: 100%;
+  width: min(100%, 390px);
+
+  justify-self: end;
 
   overflow: hidden;
 
-  background: rgba(255, 253, 249, 0.72);
+  background:
+    rgba(255, 253, 249, 0.76);
 
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.86);
 
-  border-radius: 24px;
+  border-radius: 22px;
 
   box-shadow:
-    0 12px 35px rgba(83, 76, 63, 0.06);
+    0 14px 38px rgba(83, 76, 63, 0.065);
 }
-
 
 .tally-embed iframe {
   display: block;
 
   width: 100%;
 
-  min-height: 837px;
+  height: 760px;
+  min-height: 760px;
 
   border: 0;
 }
@@ -898,21 +910,19 @@ p {
   background: #f5f1e8;
 }
 
-
 .site-footer p {
   margin-bottom: 4px;
 
   color: var(--brown);
 
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
 }
-
 
 .site-footer span {
   color: var(--brown-light);
 
-  font-size: 0.75rem;
+  font-size: 0.74rem;
 }
 
 
@@ -928,22 +938,18 @@ p {
     gap: 55px;
   }
 
-
   .hero-copy {
     max-width: 650px;
   }
-
 
   .hero-collage {
     min-height: 480px;
   }
 
-
   .info-grid {
     grid-template-columns:
       repeat(2, 1fr);
   }
-
 
   .intro-layout {
     grid-template-columns: 1fr;
@@ -951,12 +957,10 @@ p {
     gap: 50px;
   }
 
-
   .schedule-grid {
     grid-template-columns:
       repeat(2, 1fr);
   }
-
 
   .task-layout {
     grid-template-columns: 1fr;
@@ -966,7 +970,10 @@ p {
     padding: 55px;
   }
 
-
+  /*
+    平板維持一欄，
+    避免 Tally 在中等寬度下過度壓縮。
+  */
   .registration-card {
     grid-template-columns: 1fr;
 
@@ -975,9 +982,16 @@ p {
     padding: 50px;
   }
 
-
   .registration-copy {
+    max-width: 560px;
+
     padding-top: 0;
+  }
+
+  .tally-embed {
+    width: min(100%, 520px);
+
+    justify-self: start;
   }
 
 }
@@ -995,13 +1009,11 @@ p {
     padding: 70px 0;
   }
 
-
   .hero {
     min-height: auto;
 
     padding: 70px 0 55px;
   }
-
 
   .hero-inner {
     width: 88%;
@@ -1009,11 +1021,9 @@ p {
     gap: 45px;
   }
 
-
   .hero h1 {
     font-size: clamp(2.7rem, 13vw, 4rem);
   }
-
 
   .hero-description {
     font-size: 0.98rem;
@@ -1021,11 +1031,9 @@ p {
     line-height: 1.9;
   }
 
-
   .hero-collage {
     min-height: 390px;
   }
-
 
   .collage-photo {
     border-width: 5px;
@@ -1037,18 +1045,15 @@ p {
     font-size: 0.65rem;
   }
 
-
   .photo-one {
     width: 57%;
     height: 54%;
   }
 
-
   .photo-two {
     width: 48%;
     height: 46%;
   }
-
 
   .photo-three {
     width: 50%;
@@ -1057,17 +1062,14 @@ p {
     left: 8%;
   }
 
-
   .photo-four {
     width: 44%;
     height: 40%;
   }
 
-
   .section-heading {
     margin-bottom: 30px;
   }
-
 
   .section-heading h2,
   .intro-copy h2,
@@ -1075,14 +1077,12 @@ p {
     font-size: 2rem;
   }
 
-
   .info-grid {
     grid-template-columns:
       repeat(2, 1fr);
 
     gap: 10px;
   }
-
 
   .info-card {
     min-height: 150px;
@@ -1094,16 +1094,13 @@ p {
     padding: 20px 16px;
   }
 
-
   .info-card strong {
     font-size: 0.9rem;
   }
 
-
   .info-card p {
     font-size: 0.72rem;
   }
-
 
   .intro-copy p {
     font-size: 0.94rem;
@@ -1111,13 +1108,11 @@ p {
     line-height: 1.9;
   }
 
-
   .large-photo-placeholder {
     min-height: 350px;
 
     border-radius: 26px;
   }
-
 
   .schedule-grid {
     grid-template-columns: 1fr;
@@ -1125,18 +1120,15 @@ p {
     gap: 12px;
   }
 
-
   .schedule-card {
     min-height: auto;
 
     padding: 24px;
   }
 
-
   .schedule-number {
     margin-bottom: 20px;
   }
-
 
   .task-layout {
     padding: 38px 24px;
@@ -1144,16 +1136,13 @@ p {
     border-radius: 26px;
   }
 
-
   .task-list {
     grid-template-columns: 1fr;
   }
 
-
   .task-item {
     min-height: 95px;
   }
-
 
   .organizers-inner {
     flex-direction: column;
@@ -1163,34 +1152,44 @@ p {
     padding: 35px 20px;
   }
 
-
   .organizer-divider {
     width: 45px;
     height: 1px;
   }
 
-
+  /*
+    手機版保留原本你已經覺得舒服的配置。
+  */
   .registration-card {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
     padding: 38px 18px;
 
     border-radius: 28px;
   }
 
+  .registration-copy {
+    max-width: none;
+  }
 
   .registration-copy h2 {
     font-size: 2rem;
   }
 
-
   .tally-embed {
+    width: 100%;
+
     border-radius: 20px;
   }
 
-
   .tally-embed iframe {
+    width: 100%;
+
+    height: 837px;
     min-height: 837px;
   }
-
 
   .site-footer {
     padding: 35px 20px;
