@@ -1,27 +1,82 @@
 :root {
-  --cream: #f8f5ed;
-  --cream-light: #fcfaf5;
-  --white: #fffdf9;
+  /* ========================================
+     Colors
+     ======================================== */
 
-  --green: #71816a;
-  --green-light: #e9eee6;
-  --green-soft: #f1f4ed;
+  --color-primary: #75846D;
+  --color-primary-dark: #61705A;
+  --color-primary-soft: #E8EDE3;
+  --color-primary-pale: #F1F3EC;
 
-  --brown: #635d51;
-  --brown-light: #8c8578;
+  --color-bg: #F7F5EE;
+  --color-bg-secondary: #F1EFE7;
+  --color-surface: #FFFDF8;
 
-  --line: #e6e0d4;
+  --color-text-primary: #403A33;
+  --color-text-secondary: #766F64;
+  --color-text-muted: #9A9488;
 
-  --shadow:
-    0 18px 50px rgba(83, 76, 63, 0.07);
+  --color-border: #DDD9CE;
+  --color-border-light: #E9E5DB;
 
-  --radius-large: 32px;
-  --radius-medium: 22px;
+
+  /* ========================================
+     Typography
+     ======================================== */
+
+  --font-heading:
+    "Noto Serif TC",
+    "Source Han Serif TC",
+    serif;
+
+  --font-body:
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+
+
+  /* ========================================
+     Spacing
+     ======================================== */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+  --space-11: 96px;
+  --space-12: 120px;
+
+
+  /* ========================================
+     Radius
+     ======================================== */
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+
+  /* ========================================
+     Layout
+     ======================================== */
+
+  --container-width: 1120px;
+  --desktop-section-padding: 96px;
+  --mobile-section-padding: 48px;
 }
 
 
 /* ========================================
-   Base
+   Reset / Base
    ======================================== */
 
 * {
@@ -35,28 +90,17 @@ html {
 body {
   margin: 0;
 
-  font-family:
-    "Noto Sans TC",
-    "PingFang TC",
-    "Microsoft JhengHei",
-    sans-serif;
+  background: var(--color-bg);
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  background:
-    linear-gradient(
-      180deg,
-      #fcfaf5 0%,
-      #f8f5ed 100%
-    );
+  font-family: var(--font-body);
 
-  line-height: 1.8;
-}
+  font-size: 16px;
+  line-height: 2;
 
-body,
-button,
-a {
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 main {
@@ -69,6 +113,15 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
 h1,
 h2,
 h3,
@@ -76,8 +129,16 @@ p {
   margin-top: 0;
 }
 
+h1,
+h2,
+h3 {
+  color: var(--color-text-primary);
+
+  font-family: var(--font-heading);
+}
+
 p {
-  color: var(--brown-light);
+  color: var(--color-text-secondary);
 }
 
 
@@ -86,13 +147,16 @@ p {
    ======================================== */
 
 .section {
-  width: min(1080px, 88%);
-  margin: 0 auto;
-  padding: 108px 0;
+  width: calc(100% - 64px);
+  max-width: var(--container-width);
+
+  margin-inline: auto;
+
+  padding-block: var(--desktop-section-padding);
 }
 
 .section-heading {
-  margin-bottom: 42px;
+  margin-bottom: var(--space-9);
 }
 
 .section-heading.centered {
@@ -102,28 +166,38 @@ p {
 .section-label {
   display: inline-block;
 
-  margin-bottom: 14px;
+  margin-bottom: var(--space-3);
 
-  color: var(--green);
+  color: var(--color-primary);
 
-  font-size: 0.68rem;
+  font-size: 13px;
   font-weight: 700;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
+
+  line-height: 1.5;
 }
 
 .section-heading h2,
 .intro-copy h2,
 .task-title h2 {
-  margin-bottom: 18px;
+  margin-bottom: var(--space-5);
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  font-size: clamp(35px, 4vw, 51px);
 
-  line-height: 1.4;
+  font-weight: 700;
+
+  line-height: 1.35;
 
   letter-spacing: -0.025em;
+}
+
+.section-heading.centered p {
+  margin-bottom: 0;
+
+  font-size: 16px;
 }
 
 
@@ -133,29 +207,32 @@ p {
 
 .hero {
   width: 100%;
+
   min-height: 720px;
 
   display: flex;
   align-items: center;
 
-  padding: 90px 0;
+  padding: 80px 0 96px;
 
   background:
     radial-gradient(
-      circle at 76% 18%,
-      rgba(225, 233, 220, 0.68),
-      transparent 31%
+      circle at 78% 15%,
+      rgba(232, 237, 227, 0.75),
+      transparent 30%
     ),
     linear-gradient(
       135deg,
-      #fcfaf5 0%,
-      #f3eee3 100%
+      #FFFDF8 0%,
+      #F1EFE7 100%
     );
 }
 
 .hero-inner {
-  width: min(1140px, 88%);
-  margin: 0 auto;
+  width: calc(100% - 64px);
+  max-width: var(--container-width);
+
+  margin-inline: auto;
 
   display: grid;
 
@@ -165,7 +242,7 @@ p {
 
   align-items: center;
 
-  gap: 76px;
+  gap: 72px;
 }
 
 .hero-copy {
@@ -176,39 +253,45 @@ p {
 .eyebrow {
   display: inline-block;
 
-  margin-bottom: 18px;
+  margin-bottom: var(--space-5);
 
-  color: var(--green);
+  color: var(--color-primary);
 
-  font-size: 0.68rem;
+  font-size: 13px;
   font-weight: 700;
 
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
+
+  line-height: 1.5;
 }
 
 .hero h1 {
-  margin-bottom: 15px;
+  margin-bottom: var(--space-4);
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-size: clamp(56px, 6vw, 83px);
 
-  line-height: 1.18;
+  font-weight: 700;
+
+  line-height: 1.15;
 
   letter-spacing: -0.045em;
 }
 
 .hero h1 span {
-  color: var(--green);
+  color: var(--color-primary);
 }
 
 .hero-partner {
-  margin-bottom: 22px;
+  margin-bottom: var(--space-5);
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
+
+  line-height: 1.7;
 }
 
 .hero-description {
@@ -216,9 +299,9 @@ p {
 
   margin-bottom: 0;
 
-  color: var(--brown-light);
+  color: var(--color-text-secondary);
 
-  font-size: 1rem;
+  font-size: 16px;
 
   line-height: 2;
 }
@@ -226,37 +309,36 @@ p {
 .hero-button {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 
-  margin-top: 30px;
-  padding: 12px 20px;
+  margin-top: 32px;
 
-  color: var(--white);
+  padding: 11px 18px;
 
-  background: var(--green);
+  color: #fff;
 
-  border-radius: 999px;
+  background: var(--color-primary);
 
-  font-size: 0.86rem;
+  border-radius: var(--radius-md);
+
+  font-size: 14px;
   font-weight: 600;
 
-  box-shadow:
-    0 10px 28px rgba(113, 129, 106, 0.18);
+  letter-spacing: 0.02em;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .hero-button:hover {
-  transform: translateY(-2px);
+  background: var(--color-primary-dark);
 
-  box-shadow:
-    0 14px 30px rgba(113, 129, 106, 0.23);
+  transform: translateY(-2px);
 }
 
 .hero-button span {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 
@@ -268,100 +350,105 @@ p {
   position: relative;
 
   min-height: 530px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.08fr
+    0.92fr;
+
+  grid-template-rows:
+    1fr
+    0.82fr;
+
+  gap: 16px;
 }
 
 .collage-photo {
-  position: absolute;
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
 
   overflow: hidden;
 
-  display: flex;
-  align-items: flex-end;
+  background: var(--color-primary-soft);
 
-  padding: 17px;
+  border-radius: var(--radius-xl);
+}
 
-  border: 7px solid rgba(255, 253, 249, 0.92);
+.collage-photo img {
+  display: block;
 
-  border-radius: 27px;
+  width: 100%;
+  height: 100%;
 
-  box-shadow: var(--shadow);
+  object-fit: cover;
 
-  color: rgba(255, 255, 255, 0.95);
+  transition: transform 0.6s ease;
+}
 
-  font-size: 0.76rem;
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
+.collage-photo:hover img {
+  transform: scale(1.025);
 }
 
 .photo-one {
-  width: 55%;
-  height: 57%;
-
-  top: 2%;
-  left: 2%;
-
-  background:
-    linear-gradient(
-      145deg,
-      #d7dfcc,
-      #aab89e
-    );
+  grid-column: 1;
+  grid-row: 1 / 3;
 }
 
 .photo-two {
-  width: 47%;
-  height: 48%;
-
-  top: 0;
-  right: 0;
-
-  background:
-    linear-gradient(
-      145deg,
-      #e9d9c5,
-      #c8ab8b
-    );
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .photo-three {
-  width: 48%;
-  height: 48%;
-
-  bottom: 0;
-  left: 12%;
-
-  background:
-    linear-gradient(
-      145deg,
-      #dfe8df,
-      #a8bba9
-    );
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .photo-four {
-  width: 43%;
-  height: 43%;
+  position: absolute;
 
-  right: 3%;
-  bottom: 5%;
+  z-index: 3;
 
-  background:
-    linear-gradient(
-      145deg,
-      #e7dfd2,
-      #c6b69e
-    );
+  right: -18px;
+  bottom: -20px;
+
+  width: 145px;
+  height: 125px;
+
+  border: 7px solid var(--color-bg);
+
+  border-radius: var(--radius-lg);
 }
 
-.collage-photo span {
-  padding: 5px 11px;
+.collage-photo figcaption {
+  position: absolute;
 
-  border-radius: 999px;
+  left: 14px;
+  bottom: 14px;
 
-  background: rgba(65, 70, 58, 0.3);
+  z-index: 2;
 
-  backdrop-filter: blur(5px);
+  padding: 5px 10px;
+
+  color: #fff;
+
+  background: rgba(64, 58, 51, 0.3);
+
+  border-radius: var(--radius-pill);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+
+  line-height: 1.5;
+
+  backdrop-filter: blur(7px);
 }
 
 
@@ -370,67 +457,64 @@ p {
    ======================================== */
 
 .activity-info-section {
-  padding-top: 100px;
+  padding-top: 88px;
 }
 
 .info-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
-  gap: 14px;
+  gap: 16px;
 }
 
 .info-card {
-  min-height: 158px;
+  min-height: 150px;
 
   display: flex;
   align-items: flex-start;
 
   gap: 14px;
 
-  padding: 25px 20px;
+  padding: 24px 20px;
 
-  background:
-    rgba(255, 253, 249, 0.88);
+  background: rgba(255, 253, 248, 0.72);
 
-  border: 1px solid rgba(230, 224, 212, 0.8);
+  border: 1px solid var(--color-border-light);
 
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 28px rgba(83, 76, 63, 0.035);
+  border-radius: var(--radius-lg);
 }
 
 .info-icon {
   flex: 0 0 auto;
 
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--green);
+  color: var(--color-primary);
 
-  background: var(--green-soft);
+  background: var(--color-primary-pale);
 
   border-radius: 50%;
 
-  font-size: 0.82rem;
+  font-size: 12px;
   font-weight: 700;
 }
 
 .info-card small {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 
-  color: var(--brown-light);
+  color: var(--color-text-muted);
 
-  font-size: 0.7rem;
+  font-size: 13px;
+
+  line-height: 1.5;
 }
 
 .info-card strong {
@@ -438,15 +522,22 @@ p {
 
   margin-bottom: 2px;
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: 0.96rem;
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.6;
 }
 
 .info-card p {
   margin-bottom: 0;
 
-  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.7;
 }
 
 
@@ -455,7 +546,7 @@ p {
    ======================================== */
 
 .intro-section {
-  padding-top: 88px;
+  padding-top: 72px;
 }
 
 .intro-layout {
@@ -467,19 +558,19 @@ p {
 
   align-items: center;
 
-  gap: 86px;
+  gap: 80px;
 }
 
 .intro-copy p {
   max-width: 550px;
 
-  font-size: 0.96rem;
+  font-size: 16px;
 
   line-height: 2;
 }
 
 .intro-copy h2 em {
-  color: var(--green);
+  color: var(--color-primary);
 
   font-style: normal;
 }
@@ -493,26 +584,29 @@ p {
   max-width: 490px;
 
   margin-top: 28px;
-  padding: 17px 19px;
 
-  background: var(--green-soft);
+  padding: 16px 18px;
 
-  border-radius: 16px;
+  background: var(--color-primary-pale);
+
+  border-radius: var(--radius-md);
 }
 
 .intro-note span {
-  font-size: 1.3rem;
+  color: var(--color-primary);
+
+  font-size: 18px;
 }
 
 .intro-note p {
   margin: 0;
 
-  color: var(--green);
+  color: var(--color-primary);
 
-  font-size: 0.86rem;
+  font-size: 14px;
   font-weight: 600;
 
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .large-photo-placeholder {
@@ -521,9 +615,7 @@ p {
   display: flex;
   align-items: flex-end;
 
-  padding: 24px;
-
-  border-radius: 30px;
+  padding: 22px;
 
   background:
     linear-gradient(
@@ -533,102 +625,136 @@ p {
       #d8cbb9 100%
     );
 
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-xl);
 
   color: rgba(255, 255, 255, 0.95);
 
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 
 /* ========================================
    Schedule
+   Editorial Vertical Timeline
    ======================================== */
 
 .schedule-section {
-  padding-top: 72px;
-}
-
-.section-heading.centered p {
-  margin-bottom: 0;
+  padding-top: 64px;
 }
 
 .schedule-grid {
-  display: grid;
+  position: relative;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  max-width: 760px;
 
-  gap: 14px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-grid::before {
+  content: "";
+
+  position: absolute;
+
+  top: 8px;
+  bottom: 8px;
+  left: 92px;
+
+  border-left: 1px dashed var(--color-border);
 }
 
 .schedule-card {
   position: relative;
 
-  min-height: 275px;
+  display: grid;
 
-  padding: 26px 23px;
+  grid-template-columns: 76px 1fr;
 
-  background: var(--white);
+  column-gap: 48px;
 
-  border: 1px solid var(--line);
+  padding: 28px 0;
 
-  border-radius: 20px;
+  background: transparent;
 
-  box-shadow:
-    0 7px 25px rgba(83, 76, 63, 0.025);
+  border: 0;
+
+  border-radius: 0;
+
+  box-shadow: none;
 }
 
-.schedule-card.featured {
-  background:
-    linear-gradient(
-      160deg,
-      #edf2e9,
-      #e2eadf
-    );
+.schedule-card::before {
+  content: "";
 
-  border-color: transparent;
+  position: absolute;
+
+  top: 36px;
+  left: 87px;
+
+  width: 11px;
+  height: 11px;
+
+  background: var(--color-primary);
+
+  border: 3px solid var(--color-bg);
+
+  border-radius: 50%;
+
+  z-index: 2;
 }
 
 .schedule-number {
   display: block;
 
-  margin-bottom: 32px;
+  color: var(--color-primary);
 
-  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
 
-  font-size: 0.68rem;
-  font-weight: 800;
+  letter-spacing: 0.08em;
 
-  letter-spacing: 0.15em;
+  line-height: 1.6;
 }
 
 .schedule-card time {
   display: block;
 
-  margin-bottom: 9px;
+  margin-bottom: 5px;
 
-  color: var(--brown);
+  color: var(--color-primary);
 
-  font-size: 1.12rem;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  line-height: 1.6;
 }
 
 .schedule-card h3 {
-  margin-bottom: 11px;
+  margin-bottom: 8px;
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: 1.08rem;
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 1.5;
 }
 
 .schedule-card p {
+  max-width: 500px;
+
   margin-bottom: 0;
 
-  font-size: 0.84rem;
+  color: var(--color-text-secondary);
+
+  font-size: 15px;
 
   line-height: 1.8;
 }
@@ -639,7 +765,7 @@ p {
    ======================================== */
 
 .task-section {
-  padding-top: 82px;
+  padding-top: 72px;
 }
 
 .task-layout {
@@ -649,18 +775,18 @@ p {
     0.75fr
     1.25fr;
 
-  gap: 78px;
+  gap: 72px;
 
-  padding: 64px;
+  padding: 56px;
 
   background:
     linear-gradient(
       135deg,
-      #f0f3eb,
-      #f7f3eb
+      #edf1e8,
+      #f4f0e8
     );
 
-  border-radius: var(--radius-large);
+  border-radius: var(--radius-xl);
 }
 
 .task-title p {
@@ -672,108 +798,45 @@ p {
 .task-list {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-  gap: 13px;
+  gap: 12px;
 }
 
 .task-item {
-  min-height: 116px;
+  min-height: 112px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 21px;
+  padding: 20px;
 
-  background:
-    rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.55);
 
-  border-radius: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  border-radius: var(--radius-md);
 }
 
 .task-item span {
-  color: var(--green);
+  color: var(--color-primary);
 
-  font-size: 0.68rem;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 700;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
 .task-item p {
   margin: 12px 0 0;
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: 0.9rem;
+  font-size: 15px;
   font-weight: 600;
-}
 
-
-/* ========================================
-   Organizers
-   ======================================== */
-
-.organizers-section {
-  padding-top: 62px;
-  padding-bottom: 62px;
-}
-
-.organizers-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 64px;
-
-  padding: 32px 40px;
-
-  background:
-    rgba(255, 253, 249, 0.7);
-
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.organizer-group {
-  text-align: center;
-}
-
-.organizer-label {
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: var(--green);
-
-  font-size: 0.66rem;
-  font-weight: 800;
-
-  letter-spacing: 0.17em;
-}
-
-.organizer-group h3 {
-  margin: 0;
-
-  color: var(--brown);
-
-  font-size: 0.96rem;
-  font-weight: 600;
-}
-
-.organizer-group h3 span {
-  color: var(--brown-light);
-
-  margin: 0 5px;
-}
-
-.organizer-divider {
-  width: 1px;
-  height: 32px;
-
-  background: var(--line);
+  line-height: 1.7;
 }
 
 
@@ -782,89 +845,87 @@ p {
    ======================================== */
 
 .registration-section {
-  padding-top: 68px;
-  padding-bottom: 110px;
+  padding-top: 72px;
+  padding-bottom: 96px;
 }
 
 .registration-card {
   display: grid;
 
-  /*
-    桌面版重新調整：
-    左側保留呼吸感，
-    右側 Tally 控制最大視覺尺寸。
-  */
   grid-template-columns:
     minmax(250px, 0.85fr)
-    minmax(390px, 0.72fr);
+    minmax(360px, 0.72fr);
 
   justify-content: center;
   align-items: start;
 
-  column-gap: 92px;
+  column-gap: 96px;
 
-  padding: 58px 72px;
+  padding: 56px 64px;
 
   background:
     radial-gradient(
       circle at 12% 18%,
-      rgba(255, 255, 255, 0.78),
+      rgba(255, 255, 255, 0.72),
       transparent 30%
     ),
     linear-gradient(
       135deg,
-      #e9eee4,
+      #e8ede3,
       #f1e8dc
     );
 
-  border-radius: 34px;
+  border-radius: var(--radius-xl);
 }
 
 .registration-copy {
   max-width: 330px;
 
-  padding-top: 38px;
+  padding-top: 32px;
 }
 
 .registration-copy h2 {
   margin-bottom: 12px;
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  font-size: 35px;
 
-  line-height: 1.38;
+  font-weight: 700;
 
-  letter-spacing: -0.025em;
+  line-height: 1.4;
 }
 
 .registration-copy > p {
   margin-bottom: 5px;
 
-  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+
+  font-size: 15px;
 }
 
 .spots {
   display: block;
 
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 
-  color: var(--green);
+  color: var(--color-primary);
 
-  font-size: 1.08rem;
+  font-size: 16px;
 }
 
 .registration-note {
   margin-bottom: 0;
 
-  font-size: 0.78rem;
+  color: var(--color-text-muted);
+
+  font-size: 13px;
 }
 
 
-/*
-  Tally 外框：
-  不再讓表單跟著整個 registration-card 撐滿。
-*/
+/* ========================================
+   Tally
+   ======================================== */
 
 .tally-embed {
   width: min(100%, 390px);
@@ -873,15 +934,15 @@ p {
 
   overflow: hidden;
 
-  background:
-    rgba(255, 253, 249, 0.76);
+  padding: 32px;
 
-  border: 1px solid rgba(255, 255, 255, 0.86);
+  background: var(--color-surface);
 
-  border-radius: 22px;
+  border: 1px solid var(--color-border-light);
 
-  box-shadow:
-    0 14px 38px rgba(83, 76, 63, 0.065);
+  border-radius: var(--radius-xl);
+
+  box-shadow: none;
 }
 
 .tally-embed iframe {
@@ -897,32 +958,98 @@ p {
 
 
 /* ========================================
+   Organizers
+   ======================================== */
+
+.organizers-section {
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.organizers-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 56px;
+
+  padding: 28px 36px;
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.organizer-group {
+  text-align: center;
+}
+
+.organizer-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.organizer-group h3 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-family: var(--font-body);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+.organizer-group h3 span {
+  margin: 0 5px;
+
+  color: var(--color-text-muted);
+}
+
+.organizer-divider {
+  width: 1px;
+  height: 30px;
+
+  background: var(--color-border);
+}
+
+
+/* ========================================
    Footer
    ======================================== */
 
 .site-footer {
-  padding: 45px 20px;
+  padding: 42px 20px;
 
   text-align: center;
 
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-border);
 
-  background: #f5f1e8;
+  background: var(--color-bg-secondary);
 }
 
 .site-footer p {
   margin-bottom: 4px;
 
-  color: var(--brown);
+  color: var(--color-text-primary);
 
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .site-footer span {
-  color: var(--brown-light);
+  color: var(--color-text-muted);
 
-  font-size: 0.74rem;
+  font-size: 13px;
 }
 
 
@@ -932,10 +1059,14 @@ p {
 
 @media (max-width: 950px) {
 
+  .hero {
+    padding: 72px 0 80px;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
 
-    gap: 55px;
+    gap: 56px;
   }
 
   .hero-copy {
@@ -943,43 +1074,33 @@ p {
   }
 
   .hero-collage {
-    min-height: 480px;
+    min-height: 500px;
   }
 
   .info-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .intro-layout {
     grid-template-columns: 1fr;
 
-    gap: 50px;
-  }
-
-  .schedule-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    gap: 48px;
   }
 
   .task-layout {
     grid-template-columns: 1fr;
 
-    gap: 45px;
+    gap: 42px;
 
-    padding: 55px;
+    padding: 48px;
   }
 
-  /*
-    平板維持一欄，
-    避免 Tally 在中等寬度下過度壓縮。
-  */
   .registration-card {
     grid-template-columns: 1fr;
 
-    gap: 35px;
+    gap: 36px;
 
-    padding: 50px;
+    padding: 48px;
   }
 
   .registration-copy {
@@ -993,7 +1114,6 @@ p {
 
     justify-self: start;
   }
-
 }
 
 
@@ -1001,187 +1121,383 @@ p {
    Mobile
    ======================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
 
   .section {
-    width: 88%;
+    width: calc(100% - 40px);
 
-    padding: 70px 0;
+    padding-block: var(--mobile-section-padding);
   }
+
+
+  /* ----------------------------------------
+     Hero
+     ---------------------------------------- */
 
   .hero {
     min-height: auto;
 
-    padding: 70px 0 55px;
+    padding: 48px 0;
   }
 
   .hero-inner {
-    width: 88%;
+    width: calc(100% - 40px);
 
-    gap: 45px;
+    gap: 42px;
+  }
+
+  .eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 12px;
   }
 
   .hero h1 {
-    font-size: clamp(2.7rem, 13vw, 4rem);
+    margin-bottom: 12px;
+
+    font-size: 26px;
+
+    line-height: 1.45;
+
+    letter-spacing: -0.02em;
+  }
+
+  .hero-partner {
+    margin-bottom: 16px;
+
+    font-size: 14px;
   }
 
   .hero-description {
-    font-size: 0.98rem;
+    font-size: 15px;
 
-    line-height: 1.9;
+    line-height: 1.8;
   }
 
+  .hero-button {
+    margin-top: 24px;
+
+    padding: 10px 16px;
+
+    font-size: 14px;
+  }
+
+
+  /* ----------------------------------------
+     Collage
+     ---------------------------------------- */
+
   .hero-collage {
-    min-height: 390px;
+    min-height: 360px;
+
+    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-rows: 1fr 0.82fr;
+
+    gap: 10px;
   }
 
   .collage-photo {
-    border-width: 5px;
-
-    border-radius: 20px;
-
-    padding: 10px;
-
-    font-size: 0.65rem;
+    border-radius: var(--radius-lg);
   }
 
-  .photo-one {
-    width: 57%;
-    height: 54%;
-  }
+  .collage-photo figcaption {
+    left: 9px;
+    bottom: 9px;
 
-  .photo-two {
-    width: 48%;
-    height: 46%;
-  }
+    padding: 4px 8px;
 
-  .photo-three {
-    width: 50%;
-    height: 45%;
-
-    left: 8%;
+    font-size: 10px;
   }
 
   .photo-four {
-    width: 44%;
-    height: 40%;
+    right: -7px;
+    bottom: -8px;
+
+    width: 92px;
+    height: 78px;
+
+    border-width: 4px;
+
+    border-radius: var(--radius-md);
   }
 
+
+  /* ----------------------------------------
+     Section Headings
+     ---------------------------------------- */
+
   .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    margin-bottom: 10px;
+
+    font-size: 12px;
   }
 
   .section-heading h2,
   .intro-copy h2,
   .task-title h2 {
-    font-size: 2rem;
+    margin-bottom: 18px;
+
+    font-size: 30px;
+
+    line-height: 1.45;
+  }
+
+  .section-heading.centered p {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
+
+  /* ----------------------------------------
+     Activity Info
+     ---------------------------------------- */
+
+  .activity-info-section {
+    padding-top: 48px;
   }
 
   .info-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 10px;
   }
 
   .info-card {
-    min-height: 150px;
+    min-height: 140px;
 
     flex-direction: column;
 
-    gap: 12px;
+    gap: 10px;
 
-    padding: 20px 16px;
+    padding: 18px 15px;
+
+    border-radius: var(--radius-md);
+  }
+
+  .info-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 11px;
+  }
+
+  .info-card small {
+    font-size: 12px;
   }
 
   .info-card strong {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   .info-card p {
-    font-size: 0.72rem;
+    font-size: 12px;
+  }
+
+
+  /* ----------------------------------------
+     Intro
+     ---------------------------------------- */
+
+  .intro-section {
+    padding-top: 48px;
+  }
+
+  .intro-layout {
+    gap: 32px;
   }
 
   .intro-copy p {
-    font-size: 0.94rem;
+    font-size: 15px;
 
-    line-height: 1.9;
+    line-height: 1.8;
+  }
+
+  .intro-note {
+    margin-top: 24px;
+
+    padding: 15px 16px;
+  }
+
+  .intro-note p {
+    font-size: 13px;
   }
 
   .large-photo-placeholder {
-    min-height: 350px;
+    min-height: 300px;
 
-    border-radius: 26px;
+    padding: 18px;
+
+    border-radius: var(--radius-lg);
+  }
+
+
+  /* ----------------------------------------
+     Timeline
+     ---------------------------------------- */
+
+  .schedule-section {
+    padding-top: 48px;
   }
 
   .schedule-grid {
-    grid-template-columns: 1fr;
+    width: 100%;
 
-    gap: 12px;
+    max-width: none;
+  }
+
+  .schedule-grid::before {
+    left: 20px;
+
+    top: 6px;
+    bottom: 6px;
   }
 
   .schedule-card {
-    min-height: auto;
+    grid-template-columns: 48px 1fr;
 
-    padding: 24px;
+    column-gap: 20px;
+
+    padding: 22px 0;
+  }
+
+  .schedule-card::before {
+    top: 30px;
+    left: 15px;
+
+    width: 10px;
+    height: 10px;
   }
 
   .schedule-number {
-    margin-bottom: 20px;
+    padding-left: 4px;
+
+    font-size: 12px;
+  }
+
+  .schedule-card time {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+  }
+
+  .schedule-card h3 {
+    margin-bottom: 6px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+  }
+
+  .schedule-card p {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
+
+  /* ----------------------------------------
+     Volunteer Task
+     ---------------------------------------- */
+
+  .task-section {
+    padding-top: 48px;
   }
 
   .task-layout {
-    padding: 38px 24px;
+    grid-template-columns: 1fr;
 
-    border-radius: 26px;
+    gap: 32px;
+
+    padding: 36px 22px;
+
+    border-radius: var(--radius-lg);
+  }
+
+  .task-title p {
+    font-size: 15px;
+
+    line-height: 1.8;
   }
 
   .task-list {
     grid-template-columns: 1fr;
+
+    gap: 10px;
   }
 
   .task-item {
-    min-height: 95px;
+    min-height: 92px;
+
+    padding: 18px;
+
+    border-radius: var(--radius-md);
   }
 
-  .organizers-inner {
-    flex-direction: column;
-
-    gap: 24px;
-
-    padding: 35px 20px;
+  .task-item span {
+    font-size: 12px;
   }
 
-  .organizer-divider {
-    width: 45px;
-    height: 1px;
+  .task-item p {
+    font-size: 15px;
   }
 
-  /*
-    手機版保留原本你已經覺得舒服的配置。
-  */
+
+  /* ----------------------------------------
+     Registration
+     ---------------------------------------- */
+
+  .registration-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
   .registration-card {
     grid-template-columns: 1fr;
 
-    gap: 30px;
+    gap: 28px;
 
-    padding: 38px 18px;
+    padding: 36px 20px;
 
-    border-radius: 28px;
+    border-radius: var(--radius-lg);
   }
 
   .registration-copy {
     max-width: none;
+
+    padding-top: 0;
   }
 
   .registration-copy h2 {
-    font-size: 2rem;
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+    line-height: 1.45;
+  }
+
+  .registration-copy > p {
+    font-size: 15px;
+  }
+
+  .spots {
+    font-size: 16px;
+  }
+
+  .registration-note {
+    font-size: 13px;
   }
 
   .tally-embed {
     width: 100%;
 
-    border-radius: 20px;
+    padding: 20px;
+
+    border-radius: var(--radius-lg);
   }
 
   .tally-embed iframe {
@@ -1191,8 +1507,51 @@ p {
     min-height: 837px;
   }
 
-  .site-footer {
-    padding: 35px 20px;
+
+  /* ----------------------------------------
+     Organizers
+     ---------------------------------------- */
+
+  .organizers-section {
+    padding-top: 32px;
+    padding-bottom: 40px;
   }
 
+  .organizers-inner {
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 26px 18px;
+  }
+
+  .organizer-label {
+    font-size: 12px;
+  }
+
+  .organizer-group h3 {
+    font-size: 14px;
+  }
+
+  .organizer-divider {
+    width: 40px;
+    height: 1px;
+  }
+
+
+  /* ----------------------------------------
+     Footer
+     ---------------------------------------- */
+
+  .site-footer {
+    padding: 36px 20px;
+  }
+
+  .site-footer p {
+    font-size: 14px;
+  }
+
+  .site-footer span {
+    font-size: 12px;
+  }
 }
