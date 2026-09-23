@@ -306,17 +306,17 @@ h2 {
 
 .photo-two {
   grid-area: two;
-  height: 105px;
+  height: 125px;
 }
 
 .photo-three {
   grid-area: three;
-  height: 112px;
+  height: 132px;
 }
 
 .photo-four {
   grid-area: four;
-  height: 120px;
+  height: 150px;
 }
 
 
@@ -1037,12 +1037,12 @@ h2 {
 
   .photo-two {
     min-height: 0;
-    height: 82px;
+    height: 100px;
   }
 
   .photo-three {
     min-height: 0;
-    height: 98px;
+    height: 120px;
   }
 
   /*
@@ -1052,7 +1052,7 @@ h2 {
 
   .photo-four {
     min-height: 0;
-    height: 92px;
+    height: 120px;
   }
 
 
