@@ -306,17 +306,17 @@ h2 {
 
 .photo-two {
   grid-area: two;
-  height: 125px;
+  height: 135px;
 }
 
 .photo-three {
   grid-area: three;
-  height: 132px;
+  height: 140px;
 }
 
 .photo-four {
   grid-area: four;
-  height: 150px;
+  height: 180px;
 }
 
 
@@ -1052,7 +1052,7 @@ h2 {
 
   .photo-four {
     min-height: 0;
-    height: 120px;
+    height: 180px;
   }
 
 
@@ -1368,15 +1368,15 @@ h2 {
   }
 
   .photo-two {
-    height: 76px;
+    height: 100px;
   }
 
   .photo-three {
-    height: 88px;
+    height: 120px;
   }
 
   .photo-four {
-    height: 66px;
+    height: 90px;
   }
 
   .event-info-grid {
