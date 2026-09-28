@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -29,513 +29,440 @@
 
 <body>
 
-<!-- =========================================
-     HERO
-========================================== -->
-<header class="hero">
+  <!-- =========================================
+       HERO
+  ========================================== -->
+  <header class="hero">
 
-  <div class="hero-inner">
+    <div class="hero-inner">
 
-    <div class="hero-copy">
+      <div class="hero-copy">
 
-      <p class="eyebrow">
-        公益活動
-      </p>
+        <p class="eyebrow">
+          公益活動
+        </p>
 
-      <h1>
-        兔兔照護<br>
-        <span>幸福同行</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        ft. 台灣流浪兔保護協會
-      </p>
-
-      <p class="hero-description">
-        一起整理兔兔的生活空間，
-        用一點時間，讓牠們的日常更舒服。
-      </p>
-
-      <a
-        href="#registration"
-        class="hero-button"
-      >
-        一起來照顧兔兔
-        <span aria-hidden="true">➜</span>
-      </a>
-
-    </div>
-
-
-    <!-- 四圖照片牆 -->
-    <div class="hero-collage">
-
-      <figure class="photo photo-one">
-        <img
-          src="https://images.unsplash.com/photo-1708413555363-b81427afe34e?auto=format&fit=crop&w=1200&q=85"
-          alt="兔兔正在吃牧草"
-        >
-      </figure>
-
-      <figure class="photo photo-two">
-        <img
-          src="https://images.unsplash.com/photo-1685650634669-da14c7d662b7?auto=format&fit=crop&w=1000&q=85"
-          alt="兔兔自然生活的畫面"
-        >
-      </figure>
-
-      <figure class="photo photo-three">
-        <img
-          src="https://images.unsplash.com/photo-1655988880656-cd2eed3dcea5?auto=format&fit=crop&w=1000&q=85"
-          alt="兔兔在自然環境中活動"
-        >
-      </figure>
-
-      <figure class="photo photo-four">
-        <img
-          src="https://images.unsplash.com/photo-1761921015343-62c54fda69fd?auto=format&fit=crop&w=1200&q=85"
-          alt="兔兔與人溫柔互動的畫面"
-        >
-      </figure>
-
-    </div>
-
-  </div>
-
-</header>
-
-
-<!-- =========================================
-     SCROLL CUE
-========================================== -->
-<div class="scroll-cue" aria-hidden="true">
-  <span class="scroll-arrow">↓</span>
-  <span>慢慢看下去</span>
-</div>
-
-
-<!-- =========================================
-     EVENT INFO
-========================================== -->
-<main>
-
-  <section class="event-info section">
-
-    <div class="container">
-
-      <div class="event-info-grid">
-
-        <!-- 日期 -->
-        <article class="info-card">
-
-          <div class="card-icon-wrapper" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="5" width="18" height="16" rx="3"></rect>
-              <path d="M8 3V7"></path>
-              <path d="M16 3V7"></path>
-              <path d="M3 10H21"></path>
-            </svg>
-          </div>
-
-          <span class="info-label">日期</span>
-
-          <strong>
-            2026/11/7（六）
-          </strong>
-
-        </article>
-
-
-        <!-- 地點 -->
-        <article class="info-card">
-
-          <div class="card-icon-wrapper" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M20 10.5C20 15.5 12 21 12 21C12 21 4 15.5 4 10.5C4 6.91 7.58 4 12 4C16.42 4 20 6.91 20 10.5Z"></path>
-              <circle cx="12" cy="10.5" r="2.5"></circle>
-            </svg>
-          </div>
-
-          <span class="info-label">地點</span>
-
-          <strong>
-            新北市中和區
-          </strong>
-
-          <small>
-            民享街 6 號 2 樓
-          </small>
-
-        </article>
-
-
-        <!-- 時間 -->
-        <article class="info-card">
-
-          <div class="card-icon-wrapper" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="9"></circle>
-              <path d="M12 7V12L15.5 14"></path>
-            </svg>
-          </div>
-
-          <span class="info-label">時間</span>
-
-          <strong>
-            12:50 PM
-          </strong>
-
-          <small>
-            12:30 開始報到
-          </small>
-
-        </article>
-
-
-        <!-- 參加方式 -->
-        <article class="info-card">
-
-          <div class="card-icon-wrapper" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M20.84 8.61C20.84 13.27 12 20 12 20C12 20 3.16 13.27 3.16 8.61C3.16 5.96 5.22 4 7.73 4C9.31 4 10.74 4.82 12 6.13C13.26 4.82 14.69 4 16.27 4C18.78 4 20.84 5.96 20.84 8.61Z"></path>
-            </svg>
-          </div>
-
-          <span class="info-label">參加方式</span>
-
-          <strong>
-            免費參加
-          </strong>
-
-          <small>
-            額滿為止
-          </small>
-
-        </article>
+        <h1>
+          兔兔照護<br>
+          <span>幸福同行</span>
+        </h1>
 
       </div>
 
-    </div>
+      <!-- 四圖照片牆 -->
+      <div class="hero-collage">
 
-  </section>
-
-
-  <!-- =========================================
-       ACTIVITY INTRO
-  ========================================== -->
-  <section class="activity-intro section">
-
-    <div class="container">
-
-      <div class="intro-layout">
-
-        <div class="intro-copy">
-
-          <p class="section-kicker">
-            ABOUT THIS DAY
-          </p>
-
-          <h2>
-            這一天，我們一起做點溫柔的事
-          </h2>
-
-          <p>
-            這次，我們將一起來到兔兔的生活空間，
-            陪牠們整理一個乾淨、舒服的家。
-          </p>
-
-          <p>
-            從清理便便、更換墊子與便盆，
-            到整理飲水碗與牧草碗，
-            每一個看似簡單的小動作，
-            都是在讓兔兔的日常更舒服一點。
-          </p>
-
-        </div>
-
-        <!-- 中間獨立兔兔圖：維持原本 -->
-        <figure class="life-photo">
-
+        <figure class="photo photo-one">
           <img
-            src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=85"
-            alt="兔兔自然生活的日常畫面"
-            loading="lazy"
+            src="https://images.unsplash.com/photo-1708413555363-b81427afe34e?auto=format&fit=crop&w=1200&q=85"
+            alt="兔兔正在吃牧草"
           >
+        </figure>
 
-          <figcaption>
-            兔兔生活照
-          </figcaption>
+        <figure class="photo photo-two">
+          <img
+            src="https://images.unsplash.com/photo-1685650634669-da14c7d662b7?auto=format&fit=crop&w=1000&q=85"
+            alt="兔兔自然生活的畫面"
+          >
+        </figure>
 
+        <figure class="photo photo-three">
+          <img
+            src="https://images.unsplash.com/photo-1655988880656-cd2eed3dcea5?auto=format&fit=crop&w=1000&q=85"
+            alt="兔兔在自然環境中活動"
+          >
+        </figure>
+
+        <figure class="photo photo-four">
+          <img
+            src="https://images.unsplash.com/photo-1761921015343-62c54fda69fd?auto=format&fit=crop&w=1200&q=85"
+            alt="兔兔在牧草生活空間中休息"
+          >
         </figure>
 
       </div>
 
-    </div>
+      <div class="hero-support">
 
-  </section>
-
-
-  <!-- =========================================
-       SCHEDULE
-  ========================================== -->
-  <section class="schedule-section section">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <p class="section-kicker">
-          OUR TIME TOGETHER
+        <p class="hero-subtitle">
+          ft. 台灣流浪兔保護協會
         </p>
 
-        <h2>
-          兩個半小時，剛剛好的陪伴
-        </h2>
+        <p class="hero-description">
+          一起整理兔兔的生活空間，
+          用一點時間，讓牠們的日常更舒服。
+        </p>
+
+        <a
+          href="#registration"
+          class="hero-button"
+        >
+          一起來照顧兔兔
+          <span aria-hidden="true">➜</span>
+        </a>
 
       </div>
 
+    </div>
 
-      <div class="schedule-timeline">
+  </header>
 
 
-        <!-- 01 -->
-        <article class="schedule-card">
+  <!-- =========================================
+       SCROLL CUE
+  ========================================== -->
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="scroll-arrow">↓</span>
+    <span>慢慢看下去</span>
+  </div>
 
-          <time datetime="12:30">
-            12:30
-          </time>
 
-          <div class="schedule-content">
+  <!-- =========================================
+       EVENT INFO
+  ========================================== -->
+  <main>
 
-            <div class="schedule-content-header">
+    <section class="event-info section">
 
-              <div class="timeline-icon-box" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z"></path>
-                  <path d="M4.5 20C5.3 16.8 8.05 15 12 15C15.95 15 18.7 16.8 19.5 20"></path>
-                </svg>
-              </div>
+      <div class="container">
+
+        <div class="event-info-grid">
+
+          <article class="info-card">
+            <span class="info-label">日期</span>
+            <strong>2026/11/7（六）</strong>
+          </article>
+
+          <article class="info-card">
+            <span class="info-label">地點</span>
+            <strong>新北市中和區</strong>
+            <small>民享街 6 號 2 樓</small>
+          </article>
+
+          <article class="info-card">
+            <span class="info-label">時間</span>
+            <strong>12:50 PM</strong>
+            <small>12:30 開始報到</small>
+          </article>
+
+          <article class="info-card">
+            <span class="info-label">參加方式</span>
+            <strong>免費參加</strong>
+            <small>小班活動</small>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ACTIVITY INTRO
+    ========================================== -->
+    <section class="activity-intro section">
+
+      <div class="container">
+
+        <div class="intro-layout">
+
+          <div class="intro-copy">
+
+            <p class="section-kicker">
+              ABOUT THIS DAY
+            </p>
+
+            <h2>
+              這一天，我們一起做點溫柔的事
+            </h2>
+
+            <p>
+              這次，我們將一起來到兔兔的生活空間，
+              陪牠們整理一個乾淨、舒服的家。
+            </p>
+
+            <p>
+              從清理便便、更換墊子與便盆，
+              到整理飲水碗與牧草碗，
+              每一個看似簡單的小動作，
+              都是在讓兔兔的日常更舒服一點。
+            </p>
+
+          </div>
+
+          <figure class="life-photo">
+            <img
+              src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=85"
+              alt="兔兔自然生活的日常畫面"
+              loading="lazy"
+            >
+
+            <figcaption>
+              兔兔生活照
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SCHEDULE
+    ========================================== -->
+    <section class="schedule-section section">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-kicker">
+            OUR TIME TOGETHER
+          </p>
+
+          <h2>
+            兩個半小時，剛剛好的陪伴
+          </h2>
+        </div>
+
+
+        <div class="schedule-timeline">
+
+          <article class="schedule-card">
+
+            <span class="schedule-number">
+              01
+            </span>
+
+            <div class="schedule-content">
+
+              <time datetime="12:30">
+                12:30
+              </time>
 
               <h3>
                 報到・交流
               </h3>
 
+              <p>
+                提前抵達、彼此認識，
+                準備一起開始今天的兔兔照護時光。
+              </p>
+
             </div>
 
-            <p>
-              提前抵達、彼此認識，
-              準備一起開始今天的兔兔照護時光。
-            </p>
-
-          </div>
-
-        </article>
+          </article>
 
 
-        <!-- 02 -->
-        <article class="schedule-card">
+          <article class="schedule-card">
 
-          <time datetime="12:50">
-            12:50
-          </time>
+            <span class="schedule-number">
+              02
+            </span>
 
-          <div class="schedule-content">
+            <div class="schedule-content">
 
-            <div class="schedule-content-header">
-
-              <div class="timeline-icon-box" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="8.5"></circle>
-                  <path d="M12 7V12L15 14"></path>
-                </svg>
-              </div>
+              <time datetime="12:50">
+                12:50
+              </time>
 
               <h3>
                 活動開始
               </h3>
 
+              <p>
+                認識兔兔的生活環境，
+                了解今天的照護內容。
+              </p>
+
             </div>
 
-            <p>
-              認識兔兔的生活環境，
-              了解今天的照護內容。
-            </p>
-
-          </div>
-
-        </article>
+          </article>
 
 
-        <!-- 03 -->
-        <article class="schedule-card">
+          <article class="schedule-card">
 
-          <time datetime="13:00">
-            13:00
-          </time>
+            <span class="schedule-number">
+              03
+            </span>
 
-          <div class="schedule-content">
+            <div class="schedule-content">
 
-            <div class="schedule-content-header">
-
-              <div class="timeline-icon-box" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M6 8.5C6 6.57 7.57 5 9.5 5H14.5C16.43 5 18 6.57 18 8.5V18H6V8.5Z"></path>
-                  <path d="M9 5V3"></path>
-                  <path d="M15 5V3"></path>
-                  <path d="M6 11H18"></path>
-                </svg>
-              </div>
+              <time datetime="13:00">
+                13:00
+              </time>
 
               <h3>
                 兔兔生活空間整理
               </h3>
 
+              <p>
+                清理兔兔便便、更換墊子與便盆，
+                整理飲水碗、牧草碗，
+                一起把生活空間整理得舒服一些。
+              </p>
+
             </div>
 
-            <p>
-              清理兔兔便便、更換墊子與便盆，
-              整理飲水碗、牧草碗，
-              一起把生活空間整理得舒服一些。
-            </p>
-
-          </div>
-
-        </article>
+          </article>
 
 
-        <!-- 04 -->
-        <article class="schedule-card">
+          <article class="schedule-card">
 
-          <time datetime="15:00">
-            15:00
-          </time>
+            <span class="schedule-number">
+              04
+            </span>
 
-          <div class="schedule-content">
+            <div class="schedule-content">
 
-            <div class="schedule-content-header">
-
-              <div class="timeline-icon-box" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M20 8.5C20 13.5 12 20 12 20C12 20 4 13.5 4 8.5C4 5.46 6.24 3 9 3C10.3 3 11.5 3.55 12 4.5C12.5 3.55 13.7 3 15 3C17.76 3 20 5.46 20 8.5Z"></path>
-                </svg>
-              </div>
+              <time datetime="15:00">
+                15:00
+              </time>
 
               <h3>
                 活動結束
               </h3>
 
+              <p>
+                為每隻兔兔安裝新的飲水器，
+                收拾心情，帶著溫柔的回憶回家。
+              </p>
+
             </div>
-
-            <p>
-              為每隻兔兔安裝新的飲水器，
-              收拾心情，帶著溫柔的回憶回家。
-            </p>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================
-       REGISTRATION
-  ========================================== -->
-  <section
-    class="registration-section section"
-    id="registration"
-  >
-
-    <div class="container">
-
-      <div class="registration-header">
-
-        <p class="section-kicker">
-          JOIN US
-        </p>
-
-        <h2>
-          一起來照顧兔兔
-        </h2>
-
-        <p>
-          如果你也願意花一點時間，
-          歡迎加入這次的兔兔照護行動。
-        </p>
-
-      </div>
-
-
-      <div class="registration-status">
-
-        <span class="spots">
-          名額資訊載入中
-        </span>
-
-      </div>
-
-
-      <div class="tally-embed">
-
-        <iframe
-          data-tally-src="https://tally.so/embed/aQWE1b?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="837"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="流浪兔保護協會報名表"
-        ></iframe>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================
-       ORGANIZERS
-  ========================================== -->
-  <section class="organizers-section section">
-
-    <div class="container">
-
-      <div class="organizer-group">
-
-        <p class="organizer-label">
-          主辦
-        </p>
-
-        <div class="organizer-grid">
-
-          <article class="organizer-card">
-
-            <div class="organizer-icon">
-              衡
-            </div>
-
-            <span>
-              衡陽扶青社
-            </span>
 
           </article>
 
+        </div>
 
-          <article class="organizer-card">
+      </div>
 
-            <div class="organizer-icon">
-              文
+    </section>
+
+
+    <!-- =========================================
+         REGISTRATION
+    ========================================== -->
+    <section
+      class="registration-section section"
+      id="registration"
+    >
+
+      <div class="container">
+
+        <div class="registration-layout">
+
+          <div class="registration-copy">
+
+            <div class="registration-header">
+
+          <p class="section-kicker">
+            JOIN US
+          </p>
+
+          <h2>
+            一起來照顧兔兔
+          </h2>
+
+          <p>
+            如果你也願意花一點時間，
+            歡迎加入這次的兔兔照護行動。
+          </p>
+
+            </div>
+
+            <div class="registration-status">
+
+              <span class="spots">
+                名額資訊載入中
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="tally-embed">
+
+          <iframe
+            data-tally-src="https://tally.so/embed/aQWE1b?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="837"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="流浪兔保護協會報名表"
+          ></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ORGANIZERS
+    ========================================== -->
+    <section class="organizers-section section">
+
+      <div class="container">
+
+        <div class="organizer-group">
+
+          <p class="organizer-label">
+            主辦
+          </p>
+
+          <div class="organizer-grid">
+
+            <article class="organizer-card">
+
+              <div class="organizer-icon">
+                衡
+              </div>
+
+              <span>
+                衡陽扶青社
+              </span>
+
+            </article>
+
+
+            <article class="organizer-card">
+
+              <div class="organizer-icon">
+                文
+              </div>
+
+              <span>
+                文湖扶青社
+              </span>
+
+            </article>
+
+          </div>
+
+        </div>
+
+
+        <div class="organizer-group partner-group">
+
+          <p class="organizer-label">
+            合作
+          </p>
+
+          <article class="partner-card">
+
+            <div class="partner-icon">
+              ♡
             </div>
 
             <span>
-              文湖扶青社
+              台灣流浪兔保護協會
             </span>
 
           </article>
@@ -544,84 +471,60 @@
 
       </div>
 
+    </section>
 
-      <div class="organizer-group partner-group">
+  </main>
 
-        <p class="organizer-label">
-          合作
-        </p>
 
-        <article class="partner-card">
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+  <footer class="site-footer">
 
-          <div class="partner-icon">
-            ♡
-          </div>
+    <div class="footer-inner">
 
-          <span>
-            台灣流浪兔保護協會
-          </span>
-
-        </article>
-
+      <div class="footer-dots" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
+      <p>
+        兔兔照護・幸福同行
+        <span>—</span>
+        公益活動
+      </p>
+
     </div>
 
-  </section>
-
-</main>
+  </footer>
 
 
-<!-- =========================================
-     FOOTER
-========================================== -->
-<footer class="site-footer">
+  <!-- Tally -->
+  <script>
+    var d = document,
+        w = "https://tally.so/widgets/embed.js",
+        v = function () {
+          "undefined" != typeof Tally
+            ? Tally.loadEmbeds()
+            : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+                e.src = e.dataset.tallySrc;
+              });
+        };
 
-  <div class="footer-inner">
+    if ("undefined" != typeof Tally) {
+      v();
+    } else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
 
-    <div class="footer-dots" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <p>
-      兔兔照護・幸福同行
-      <span>—</span>
-      公益活動
-    </p>
-
-  </div>
-
-</footer>
-
-
-<!-- Tally -->
-<script>
-var d = document,
-w = "https://tally.so/widgets/embed.js",
-v = function () {
-  "undefined" != typeof Tally
-    ? Tally.loadEmbeds()
-    : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
-        e.src = e.dataset.tallySrc;
-      });
-};
-
-if ("undefined" != typeof Tally) {
-  v();
-} else if (d.querySelector('script[src="' + w + '"]') == null) {
-  var s = d.createElement("script");
-  s.src = w;
-  s.onload = v;
-  s.onerror = v;
-  d.body.appendChild(s);
-}
-</script>
-
-
-<!-- Existing registration logic: DO NOT MODIFY -->
-<script src="../js/activity.js"></script>
+  <!-- Existing registration logic: DO NOT MODIFY -->
+  <script src="../js/activity.js"></script>
 
 </body>
 </html>
