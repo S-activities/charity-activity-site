@@ -171,20 +171,18 @@ h2 {
 
   grid-template-areas:
     "copy collage"
-    ". support";
+    "support collage";
 
-  align-items: start;
+  grid-template-rows: auto auto;
 
   column-gap: 64px;
-  row-gap: 28px;
+  row-gap: 52px;
+
+  align-items: start;
 }
 
 .hero-copy {
   grid-area: copy;
-
-  align-self: start;
-
-  padding-top: 18px;
 
   text-align: left;
 }
@@ -200,12 +198,13 @@ h2 {
 }
 
 .hero h1 {
-  margin-bottom: 12px;
+  margin-bottom: 0;
 
+  font-family: var(--font-heading);
   font-size: 36px;
   font-weight: 800;
   line-height: 1.3;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 .hero h1 span {
@@ -215,29 +214,29 @@ h2 {
 .hero-support {
   grid-area: support;
 
-  width: 100%;
-  max-width: 390px;
-  justify-self: center;
+  text-align: left;
 }
 
 .hero-subtitle {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 
   color: var(--color-text-secondary);
 
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0.04em;
 }
 
 .hero-description {
-  max-width: 390px;
-  margin: 0 0 20px;
+  max-width: 360px;
+  margin: 0 0 24px;
 
   color: var(--color-text-secondary);
 
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: 16px;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
 }
 
 .hero-button {
@@ -268,8 +267,30 @@ h2 {
   transform: translateY(-1px);
 }
 
-.hero-button span {
+.hero-button > span:last-child {
   font-size: 14px;
+}
+
+.hero-button-carrot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+}
+
+.hero-button-carrot svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-button-carrot .carrot-leaves {
+  fill: #F1B764;
+}
+
+.hero-button-carrot .carrot-body {
+  fill: #D9824B;
 }
 
 
@@ -278,9 +299,12 @@ h2 {
 ========================================================= */
 
 .hero-collage {
+  grid-area: collage;
+
   width: 100%;
   max-width: 390px;
-  margin-inline: auto;
+  margin: 0;
+  justify-self: end;
 
   display: grid;
 
@@ -723,21 +747,21 @@ h2 {
 
   grid-template-columns:
     minmax(0, 1fr)
-    minmax(0, 1.1fr);
-
-  align-items: start;
+    minmax(420px, 1.1fr);
 
   gap: 64px;
+
+  align-items: start;
 }
 
 .registration-copy {
-  padding-top: 18px;
+  padding-top: 8px;
 }
 
 .registration-header {
-  max-width: 560px;
+  max-width: 620px;
 
-  margin: 0 0 24px;
+  margin: 0;
 
   text-align: left;
 }
@@ -754,9 +778,30 @@ h2 {
 }
 
 .registration-status {
-  margin: 0;
+  margin-top: 28px;
+  margin-bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
 
   text-align: left;
+}
+
+.carrot-mark {
+  flex: 0 0 auto;
+
+  width: 24px;
+  height: 24px;
+}
+
+.carrot-mark .carrot-leaves {
+  fill: #75846D;
+}
+
+.carrot-mark .carrot-body {
+  fill: #D9824B;
 }
 
 .registration-status .spots {
@@ -1000,14 +1045,6 @@ h2 {
 
   .hero-copy {
     width: 100%;
-    padding-top: 0;
-
-    text-align: center;
-  }
-
-  .hero-support {
-    width: 100%;
-    max-width: 360px;
 
     text-align: center;
   }
@@ -1017,18 +1054,33 @@ h2 {
   }
 
   .hero h1 {
-    margin-bottom: 8px;
+    margin-bottom: 0;
 
     font-size: 30px;
     font-weight: 800;
 
     line-height: 1.3;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-collage {
+    width: 100%;
+    max-width: 360px;
+
+    margin-inline: auto;
+  }
+
+  .hero-support {
+    width: 100%;
+
+    text-align: center;
   }
 
   .hero-subtitle {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .hero-description {
@@ -1036,8 +1088,9 @@ h2 {
 
     margin: 0 auto 18px;
 
-    font-size: 16px;
+    font-size: 15.5px;
     line-height: 1.8;
+    letter-spacing: 0.01em;
   }
 
   .hero-button {
@@ -1046,6 +1099,16 @@ h2 {
     padding: 7px 16px;
 
     font-size: 14px;
+  }
+
+  .hero-button-carrot {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-button-carrot svg {
+    width: 18px;
+    height: 18px;
   }
 
 
@@ -1306,12 +1369,8 @@ h2 {
   }
 
   .registration-header {
-    max-width: 620px;
-    margin: 0 auto 20px;
-    text-align: center;
-  }
+    max-width: none;
 
-  .registration-status {
     text-align: center;
   }
 
@@ -1322,6 +1381,14 @@ h2 {
   .registration-header > p:last-child {
     font-size: 16px;
     line-height: 1.9;
+  }
+
+  .registration-status {
+    margin-top: 18px;
+
+    justify-content: center;
+
+    text-align: center;
   }
 
   .registration-status .spots {
