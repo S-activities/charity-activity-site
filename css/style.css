@@ -344,22 +344,22 @@ h2 {
 
 .photo-one {
   grid-area: one;
-  height: 235px;
+  height: 250px;
 }
 
 .photo-two {
   grid-area: two;
-  height: 135px;
+  height: 150px;
 }
 
 .photo-three {
   grid-area: three;
-  height: 140px;
+  height: 150px;
 }
 
 .photo-four {
   grid-area: four;
-  height: 180px;
+  height: 190px;
 }
 
 
@@ -1149,7 +1149,7 @@ h2 {
 
   .photo-two {
     min-height: 0;
-    height: 100px;
+    height: 120px;
   }
 
   .photo-three {
