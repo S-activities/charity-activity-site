@@ -169,13 +169,24 @@ h2 {
     minmax(0, 0.9fr)
     minmax(0, 1.1fr);
 
-  align-items: center;
+  grid-template-areas:
+    "copy collage"
+    ". support";
 
-  gap: 64px;
+  align-items: start;
+
+  column-gap: 64px;
+  row-gap: 28px;
 }
 
 .hero-copy {
-  text-align: center;
+  grid-area: copy;
+
+  align-self: start;
+
+  padding-top: 18px;
+
+  text-align: left;
 }
 
 .eyebrow {
@@ -201,8 +212,16 @@ h2 {
   display: inline-block;
 }
 
+.hero-support {
+  grid-area: support;
+
+  width: 100%;
+  max-width: 390px;
+  justify-self: center;
+}
+
 .hero-subtitle {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 
   color: var(--color-text-secondary);
 
@@ -212,8 +231,8 @@ h2 {
 }
 
 .hero-description {
-  max-width: 300px;
-  margin: 0 auto 24px;
+  max-width: 390px;
+  margin: 0 0 20px;
 
   color: var(--color-text-secondary);
 
@@ -668,7 +687,7 @@ h2 {
 
   color: var(--color-text-primary);
 
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 
   font-size: 18px;
   font-weight: 700;
@@ -699,12 +718,28 @@ h2 {
   padding-bottom: 104px;
 }
 
+.registration-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.1fr);
+
+  align-items: start;
+
+  gap: 64px;
+}
+
+.registration-copy {
+  padding-top: 18px;
+}
+
 .registration-header {
-  max-width: 620px;
+  max-width: 560px;
 
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
 
-  text-align: center;
+  text-align: left;
 }
 
 .registration-header h2 {
@@ -719,9 +754,9 @@ h2 {
 }
 
 .registration-status {
-  margin-bottom: 20px;
+  margin: 0;
 
-  text-align: center;
+  text-align: left;
 }
 
 .registration-status .spots {
@@ -734,6 +769,10 @@ h2 {
 }
 
 .tally-embed {
+  width: 100%;
+  max-width: 520px;
+  justify-self: end;
+
   overflow: hidden;
 
   border: 1px solid var(--color-border-light);
@@ -961,6 +1000,16 @@ h2 {
 
   .hero-copy {
     width: 100%;
+    padding-top: 0;
+
+    text-align: center;
+  }
+
+  .hero-support {
+    width: 100%;
+    max-width: 360px;
+
+    text-align: center;
   }
 
   .eyebrow {
@@ -985,7 +1034,7 @@ h2 {
   .hero-description {
     max-width: 290px;
 
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
 
     font-size: 16px;
     line-height: 1.8;
@@ -1244,6 +1293,28 @@ h2 {
     padding-bottom: 72px;
   }
 
+  .registration-layout {
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+  }
+
+  .registration-copy {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .registration-header {
+    max-width: 620px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+
+  .registration-status {
+    text-align: center;
+  }
+
   .registration-header h2 {
     font-size: 24px;
   }
@@ -1258,6 +1329,10 @@ h2 {
   }
 
   .tally-embed {
+    width: 100%;
+    max-width: none;
+    justify-self: auto;
+
     padding: 20px;
 
     border-radius: var(--radius-xl);
