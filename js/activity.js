@@ -11,7 +11,7 @@ const API_URL =
 // ========================================
 
 // 測試完成、正式上線前 → 改成 false
-const TEST_MODE = true;
+const TEST_MODE = false;
 
 // 🧪 測試時使用的「現在時間」
 // 可以修改這裡來模擬不同日期
